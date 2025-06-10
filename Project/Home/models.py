@@ -17,6 +17,8 @@ class UserProfile(models.Model):
     age = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     website_name = models.URLField()
+    def __str__(self):
+        return self.first_name
 
 class Room(models.Model):
     user = models.ForeignKey(UserProfile,on_delete=models.CASCADE)
